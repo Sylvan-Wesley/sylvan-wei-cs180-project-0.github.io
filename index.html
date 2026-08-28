@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: oklch(0.94 0.01 200); }
+  * { box-sizing: border-box; }
+  a { color: oklch(0.44 0.05 232); text-decoration: none; border-bottom: 1px solid oklch(0.44 0.05 232 / 0.3); transition: color .4s, border-color .4s; }
+  a:hover { color: oklch(0.31 0.055 232); border-color: oklch(0.31 0.055 232 / .6); }
+  ::selection { background: oklch(0.87 0.04 225); }
+  @keyframes bank { from { transform: translate3d(-6%,0,0) } to { transform: translate3d(6%,0,0) } }
+  @keyframes sail { from { transform: translate3d(0,0,0) scale(.15) } to { transform: translate3d(-34px,-1px,0) scale(.15) } }
+  @keyframes rise { from { opacity: 0; transform: translateY(16px) } to { opacity: 1; transform: none } }
+</style>
+</helmet>
+
+<div style="background: oklch(0.94 0.01 200); color: oklch(0.3 0.014 232); font-family: 'EB Garamond', Georgia, serif;">
+
+  <!-- ── the scene: where the gardens part ── -->
+  <div style="position: relative; height: 100vh; min-height: 620px; overflow: hidden;">
+
+    <!-- sky: grey cloud ridges, cooling toward orange at the far light -->
+    <div style="position: absolute; inset: 0 0 46% 0; background: linear-gradient(to bottom, oklch(0.845 0.018 250) 0%, oklch(0.875 0.016 248) 30%, oklch(0.905 0.02 240) 62%, oklch(0.935 0.03 82) 88%, oklch(0.945 0.038 68) 100%);"></div>
+    <!-- long cloud bands -->
+    <div style="position: absolute; inset: 0 -12% 46% -12%; opacity: .26; background: repeating-linear-gradient(to bottom, transparent 0 26px, oklch(0.8 0.014 250 / .45) 32px 42px, transparent 50px 84px); animation: bank 110s ease-in-out infinite alternate;"></div>
+    <div style="position: absolute; inset: 8% -18% 48% -18%; opacity: .2; background: repeating-linear-gradient(to bottom, transparent 0 54px, oklch(0.83 0.02 248 / .5) 62px 78px, transparent 92px 140px); animation: bank 150s ease-in-out infinite alternate-reverse;"></div>
+
+    <!-- sea: airy blue, banded with currents -->
+    <div style="position: absolute; inset: 54% 0 0 0; background: linear-gradient(to bottom, oklch(0.855 0.032 218) 0%, oklch(0.83 0.04 210) 6%, oklch(0.8 0.045 205) 16%, oklch(0.745 0.052 198) 42%, oklch(0.69 0.056 196) 78%, oklch(0.645 0.058 197) 100%);"></div>
+    <div style="position: absolute; inset: 54% 0 0 0; opacity: .5; background: repeating-linear-gradient(to bottom, transparent 0 14px, oklch(0.9 0.02 210 / .35) 14px 15px, transparent 15px 44px);"></div>
+    <div style="position: absolute; inset: 54% 0 62% 0; background: linear-gradient(to bottom, oklch(0.95 0.02 90 / .35), transparent);"></div>
+
+    <!-- the horizon -->
+    <div style="position: absolute; left: 0; right: 0; top: 54%; height: 1px; background: linear-gradient(to right, oklch(0.78 0.02 215 / .5), oklch(0.7 0.03 210 / .85) 45%, oklch(0.78 0.02 215 / .5));"></div>
+
+    <!-- «Надежда»: full-rigged, six tiers of sail, standing off the horizon -->
+    <div style="position: absolute; left: 60%; top: calc(54% - 196px); width: 300px; height: 214px; transform-origin: 50% 100%; animation: sail 420s linear infinite alternate;">
+      <!-- mizzen (aft, left) -->
+      <div style="position: absolute; left: 79px; top: 62px; width: 3px; height: 116px; background: oklch(0.38 0.022 250);"></div>
+      <div style="position: absolute; left: 56px; top: 70px; width: 50px; height: 28px; background: linear-gradient(to right, oklch(0.97 0.012 88), oklch(0.9 0.014 84)); clip-path: polygon(9% 0, 91% 0, 100% 100%, 0 100%);"></div>
+      <div style="position: absolute; left: 51px; top: 101px; width: 60px; height: 32px; background: linear-gradient(to right, oklch(0.96 0.012 88), oklch(0.88 0.016 84)); clip-path: polygon(8% 0, 92% 0, 100% 100%, 0 100%);"></div>
+      <div style="position: absolute; left: 47px; top: 136px; width: 66px; height: 34px; background: linear-gradient(to right, oklch(0.95 0.012 88), oklch(0.86 0.016 84)); clip-path: polygon(7% 0, 93% 0, 100% 100%, 0 100%);"></div>
+      <!-- mainmast (centre, tallest) -->
+      <div style="position: absolute; left: 146px; top: 6px; width: 3.5px; height: 172px; background: oklch(0.36 0.022 250);"></div>
+      <div style="position: absolute; left: 132px; top: 14px; width: 32px; height: 22px; background: oklch(0.98 0.01 88); clip-path: polygon(12% 0, 88% 0, 100% 100%, 0 100%);"></div>
+      <div style="position: absolute; left: 122px; top: 39px; width: 52px; height: 30px; background: linear-gradient(to right, oklch(0.975 0.012 88), oklch(0.905 0.014 84)); clip-path: polygon(9% 0, 91% 0, 100% 100%, 0 100%);"></div>
+      <div style="position: absolute; left: 114px; top: 72px; width: 68px; height: 34px; background: linear-gradient(to right, oklch(0.965 0.012 88), oklch(0.885 0.016 84)); clip-path: polygon(8% 0, 92% 0, 100% 100%, 0 100%);"></div>
+      <div style="position: absolute; left: 107px; top: 109px; width: 82px; height: 36px; background: linear-gradient(to right, oklch(0.955 0.012 88), oklch(0.865 0.016 84)); clip-path: polygon(7% 0, 93% 0, 100% 100%, 0 100%);"></div>
+      <div style="position: absolute; left: 102px; top: 148px; width: 92px; height: 30px; background: linear-gradient(to right, oklch(0.945 0.012 88), oklch(0.85 0.018 84)); clip-path: polygon(6% 0, 94% 0, 100% 100%, 0 100%);"></div>
+      <!-- foremast (forward, right) -->
+      <div style="position: absolute; left: 214px; top: 30px; width: 3px; height: 148px; background: oklch(0.38 0.022 250);"></div>
+      <div style="position: absolute; left: 202px; top: 38px; width: 28px; height: 20px; background: oklch(0.975 0.01 88); clip-path: polygon(12% 0, 88% 0, 100% 100%, 0 100%);"></div>
+      <div style="position: absolute; left: 192px; top: 61px; width: 48px; height: 28px; background: linear-gradient(to right, oklch(0.97 0.012 88), oklch(0.9 0.014 84)); clip-path: polygon(9% 0, 91% 0, 100% 100%, 0 100%);"></div>
+      <div style="position: absolute; left: 185px; top: 92px; width: 62px; height: 32px; background: linear-gradient(to right, oklch(0.96 0.012 88), oklch(0.885 0.016 84)); clip-path: polygon(8% 0, 92% 0, 100% 100%, 0 100%);"></div>
+      <div style="position: absolute; left: 180px; top: 127px; width: 72px; height: 32px; background: linear-gradient(to right, oklch(0.95 0.012 88), oklch(0.865 0.016 84)); clip-path: polygon(7% 0, 93% 0, 100% 100%, 0 100%);"></div>
+      <!-- bowsprit and jibs -->
+      <div style="position: absolute; left: 249px; top: 156px; width: 52px; height: 2.5px; background: oklch(0.38 0.022 250); transform: rotate(-13deg); transform-origin: 0 50%;"></div>
+      <div style="position: absolute; left: 252px; top: 122px; width: 34px; height: 40px; background: oklch(0.965 0.012 88); clip-path: polygon(0 0, 100% 100%, 0 100%);"></div>
+      <div style="position: absolute; left: 238px; top: 108px; width: 26px; height: 52px; background: oklch(0.975 0.01 88); clip-path: polygon(0 0, 100% 100%, 0 100%);"></div>
+      <!-- hull -->
+      <div style="position: absolute; left: 62px; top: 176px; width: 196px; height: 20px; background: linear-gradient(to bottom, oklch(0.42 0.028 248), oklch(0.3 0.026 250)); clip-path: polygon(4% 0, 100% 0, 92% 100%, 12% 100%); border-radius: 0 6px 4px 0;"></div>
+      <div style="position: absolute; left: 66px; top: 176px; width: 188px; height: 4px; background: oklch(0.92 0.016 86 / .85);"></div>
+      <!-- her reflection, broken by the current -->
+      <div style="position: absolute; left: 78px; top: 197px; width: 164px; height: 34px; opacity: .4; background: linear-gradient(to bottom, oklch(0.9 0.02 86 / .8), transparent); mask-image: repeating-linear-gradient(to bottom, #000 0 3px, transparent 3px 7px); -webkit-mask-image: repeating-linear-gradient(to bottom, #000 0 3px, transparent 3px 7px);"></div>
+    </div>
+
+    <!-- fog off the water -->
+    <div style="position: absolute; inset: 40% -20% 12% -20%; pointer-events: none; opacity: .5; background: radial-gradient(46% 34% at 32% 44%, oklch(0.985 0.004 230 / .95), transparent 72%), radial-gradient(38% 24% at 82% 56%, oklch(0.98 0.006 215 / .8), transparent 74%); animation: bank 78s ease-in-out infinite alternate;"></div>
+
+    <!-- the near water, darkening to the foot of the frame -->
+    <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 24%; background: linear-gradient(to bottom, transparent, oklch(0.58 0.055 199 / .55));"></div>
+    <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 30%; opacity: .35; background: repeating-linear-gradient(to bottom, transparent 0 18px, oklch(0.9 0.02 205 / .4) 18px 20px, transparent 20px 52px);"></div>
+
+    <!-- the words, standing in the gap -->
+    <div style="position: absolute; left: 0; right: 52%; top: 15vh; display: flex; justify-content: flex-end; animation: rise 1.8s cubic-bezier(.2,.7,.2,1) both;">
+      <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding: 0 24px 0 48px; max-width: 520px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: oklch(0.44 0.02 232 / .8);">Homepage</div>
+        <h1 style="margin: 0; font-size: clamp(46px, 7vw, 92px); font-weight: 400; line-height: 1; letter-spacing: -.02em; color: oklch(0.26 0.02 235);">Xinyuan Wei</h1>
+        <p style="margin: 0; max-width: 34ch; font-size: 21px; font-style: italic; line-height: 1.5; color: oklch(0.36 0.02 232); text-wrap: pretty;">On generative models and science.</p>
+      </div>
+    </div>
+
+    <nav style="position: absolute; left: 0; right: 0; bottom: 34px; display: flex; justify-content: center; gap: 30px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .1em;">
+      <a href="#about" style="color: oklch(0.95 0.01 230); border-color: oklch(0.95 0.01 230 / .4);">About</a>
+      <a href="#research" style="color: oklch(0.95 0.01 230); border-color: oklch(0.95 0.01 230 / .4);">Research</a>
+      <a href="#writing" style="color: oklch(0.95 0.01 230); border-color: oklch(0.95 0.01 230 / .4);">Writing</a>
+      <a href="#elsewhere" style="color: oklch(0.95 0.01 230); border-color: oklch(0.95 0.01 230 / .4);">Elsewhere</a>
+    </nav>
+  </div>
+
+  <!-- ── content ── -->
+  <div style="background: linear-gradient(to bottom, oklch(0.645 0.058 197) 0%, oklch(0.72 0.05 198) 1.6%, oklch(0.82 0.032 199) 4%, oklch(0.9 0.018 200) 7%, oklch(0.94 0.01 200) 11%);">
+  <div style="max-width: 1000px; margin: 0 auto; padding: 12vh 48px 14vh;">
+    <section id="about" style="display: grid; grid-template-columns: 170px 1fr; gap: 40px; padding-bottom: 46px;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: oklch(0.55 0.02 225); padding-top: 6px;">About</div>
+      <div style="display: flex; flex-direction: column; gap: 18px; max-width: 62ch;">
+        <p style="margin: 0; font-size: 19px; line-height: 1.68; text-wrap: pretty;">I am an undergraduate at Yuanpei College, Peking University, currently spending Fall 2026 at UC Berkeley. I used to participate in Chinese Chemistry Olympiad. Now, I am also interested in generative models.</p>
+        <p style="margin: 0; font-size: 19px; line-height: 1.68; color: oklch(0.44 0.016 228); text-wrap: pretty;">I am also a fan of Ivan Bunin (wink).</p>
+      </div>
+    </section>
+
+    <section id="research" style="display: grid; grid-template-columns: 170px 1fr; gap: 40px; padding: 46px 0; border-top: 1px solid oklch(0.72 0.018 220 / .45);">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: oklch(0.55 0.02 225); padding-top: 6px;">Research</div>
+      <div style="display: flex; flex-direction: column;">
+        <sc-for list="{{ research }}" as="item" hint-placeholder-count="3">
+          <div style="display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: baseline; padding: 17px 0; border-bottom: 1px solid oklch(0.75 0.016 220 / .35);">
+            <div style="display: flex; flex-direction: column; gap: 5px;">
+              <div style="font-size: 21px;">{{ item.title }}</div>
+              <div style="font-size: 17px; font-style: italic; color: oklch(0.47 0.016 228);">{{ item.note }}</div>
+            </div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: oklch(0.58 0.02 222);">{{ item.year }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="writing" style="display: grid; grid-template-columns: 170px 1fr; gap: 40px; padding: 46px 0; border-top: 1px solid oklch(0.72 0.018 220 / .45);">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: oklch(0.55 0.02 225); padding-top: 6px;">Writing</div>
+      <div style="display: flex; flex-direction: column;">
+        <sc-for list="{{ writing }}" as="item" hint-placeholder-count="3">
+          <div style="display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: baseline; padding: 17px 0; border-bottom: 1px solid oklch(0.75 0.016 220 / .35);">
+            <a href="#" style="font-size: 21px; border-bottom: none;">{{ item.title }}</a>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: oklch(0.58 0.02 222);">{{ item.date }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="elsewhere" style="display: grid; grid-template-columns: 170px 1fr; gap: 40px; padding: 46px 0 0; border-top: 1px solid oklch(0.72 0.018 220 / .45);">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: oklch(0.55 0.02 225); padding-top: 6px;">Elsewhere</div>
+      <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 12px 28px; font-family: 'IBM Plex Mono', monospace; font-size: 13px;">
+        <a href="#">Email</a>
+        <a href="#">GitHub</a>
+        <a href="#">Scholar</a>
+        <a href="#">CV</a>
+      </div>
+    </section>
+
+    <footer style="padding-top: 12vh; display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .12em; color: oklch(0.6 0.02 222);">
+      <div>© 2026</div>
+      <sc-if value="{{ showEpigraph }}" hint-placeholder-val="{{ true }}">
+        <div style="font-family: 'EB Garamond', Georgia, serif; font-style: italic; font-size: 17px; letter-spacing: 0; max-width: 36ch; text-align: right; line-height: 1.5; color: oklch(0.5 0.018 228);">“Almost on the line of the horizon we caught sight of the sails of the Nadezhda.”</div>
+      </sc-if>
+    </footer>
+  </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showEpigraph&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showEpigraph: this.props.showEpigraph ?? true,
+      work: [
+        { title: "Project one", note: "a short descriptive phrase", year: "2026" },
+        { title: "Project two", note: "what it was, in a few words", year: "2025" },
+        { title: "Project three", note: "another line of context", year: "2024" }
+      ],
+      writing: [
+        { title: "An essay title goes here", date: "May 2026" },
+        { title: "A second piece, shorter", date: "Nov 2025" },
+        { title: "Notes on something", date: "Feb 2025" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
