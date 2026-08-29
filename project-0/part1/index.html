@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: oklch(0.94 0.01 200); }
+  * { box-sizing: border-box; }
+  a { color: oklch(0.44 0.05 232); text-decoration: none; border-bottom: 1px solid oklch(0.44 0.05 232 / 0.3); transition: color .4s, border-color .4s; }
+  a:hover { color: oklch(0.31 0.055 232); border-color: oklch(0.31 0.055 232 / .6); }
+  ::selection { background: oklch(0.87 0.04 225); }
+  @keyframes bank { from { transform: translate3d(-6%,0,0) } to { transform: translate3d(6%,0,0) } }
+  @keyframes sail { from { transform: translate3d(0,0,0) scale(.15) } to { transform: translate3d(-34px,-1px,0) scale(.15) } }
+  @keyframes rise { from { opacity: 0; transform: translateY(16px) } to { opacity: 1; transform: none } }
+</style>
+</helmet>
+
+<div style="background: oklch(0.94 0.01 200); color: oklch(0.3 0.014 232); font-family: 'EB Garamond', Georgia, serif;">
+
+  <!-- ── content ── -->
+  <div style="background: linear-gradient(to bottom, oklch(0.645 0.058 197) 0%, oklch(0.72 0.05 198) 1.6%, oklch(0.82 0.032 199) 4%, oklch(0.9 0.018 200) 7%, oklch(0.94 0.01 200) 11%);">
+  <div style="max-width: 1000px; margin: 0 auto; padding: 12vh 48px 14vh;">
+    <section id="Gallery" style="display: grid; grid-template-columns: 170px 1fr; gap: 40px; padding-bottom: 46px;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: oklch(0.55 0.02 225); padding-top: 6px;">Gallery</div>
+      <div style="display: flex; flex-direction: column; gap: 18px; max-width: 62ch;">
+        <p style="margin: 0; font-size: 19px; line-height: 1.68; text-wrap: pretty;">Two selfies of myself.</p>
+        <figure>
+            <img src="./selfie-near.jpg" alt="None" width="100px">
+            <figcaption>A selfie that is taken from close up.</figcaption>
+          </figure>
+        <figure>
+            <img src="./selfie-far.jpg" alt="None" width="100px">
+            <figcaption>A selfie that is taken from far away.</figcaption>
+          </figure>
+      </div>
+    </section>
+
+    <section id="project0" style="display: grid; grid-template-columns: 170px 1fr; gap: 40px; padding: 46px 0; border-top: 1px solid oklch(0.72 0.018 220 / .45);">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: oklch(0.55 0.02 225); padding-top: 6px;">Project 0</div>
+      <div style="display: flex; flex-direction: column;">
+        <sc-for list="{{ Project 0 }}" as="item" hint-placeholder-count="3">
+          <div style="display: grid; grid-template-columns: 1fr auto;">
+  <div style="font-size: 21px; padding: 17px 0; ">
+    <a href="./project-0/part1/index.html">Part-1</a>
+  </div>
+  <div style="font-size: 17px; font-style: italic; color: oklch(0.47 0.016 228); align-self: baseline; padding: 17px 0; border-bottom: 1px solid oklch(0.75 0.016 220 / .35);">
+    Selfie: The Wrong Way vs. The Right Way
+  </div>
+
+  <div style="font-size: 21px; padding: 17px 0; ">
+    <a href="./project-0/part2/index.html">Part-2</a>
+  </div>
+  <div style="font-size: 17px; font-style: italic; color: oklch(0.47 0.016 228); align-self: baseline; padding: 17px 0; border-bottom: 1px solid oklch(0.75 0.016 220 / .35);">
+    Architectural Perspective Compression
+  </div>
+
+  <div style="font-size: 21px; padding: 17px 0; ">
+    <a href="./project-0/part3/index.html">Part-3</a>
+  </div>
+  <div style="font-size: 17px; font-style: italic; color: oklch(0.47 0.016 228); align-self: baseline; padding: 17px 0; border-bottom: 1px solid oklch(0.75 0.016 220 / .35);">
+    The Dolly Zoom
+  </div>
+  </div>
+      <div style="font-size: 21px; padding: 17px 0; ">
+        <a href="../../index.html">Back to Main</a>
+      </div> 
+        </sc-for>
+        </div>
+    </section>
+    <footer style="padding-top: 12vh; display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .12em; color: oklch(0.6 0.02 222);">
+      <div>© 2026</div>
+      <sc-if value="{{ showEpigraph }}" hint-placeholder-val="{{ true }}">
+        <div style="font-family: 'EB Garamond', Georgia, serif; font-style: italic; font-size: 17px; letter-spacing: 0; max-width: 36ch; text-align: right; line-height: 1.5; color: oklch(0.5 0.018 228);">“Almost on the line of the horizon we caught sight of the sails of the Nadezhda.”</div>
+      </sc-if>
+    </footer>
+  </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showEpigraph&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showEpigraph: this.props.showEpigraph ?? true,
+      work: [
+        { title: "Project one", note: "a short descriptive phrase", year: "2026" },
+        { title: "Project two", note: "what it was, in a few words", year: "2025" },
+        { title: "Project three", note: "another line of context", year: "2024" }
+      ],
+      writing: [
+        { title: "An essay title goes here", date: "May 2026" },
+        { title: "A second piece, shorter", date: "Nov 2025" },
+        { title: "Notes on something", date: "Feb 2025" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -90,9 +90,7 @@
 
     <nav style="position: absolute; left: 0; right: 0; bottom: 34px; display: flex; justify-content: center; gap: 30px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .1em;">
       <a href="#about" style="color: oklch(0.95 0.01 230); border-color: oklch(0.95 0.01 230 / .4);">About</a>
-      <a href="#research" style="color: oklch(0.95 0.01 230); border-color: oklch(0.95 0.01 230 / .4);">Research</a>
-      <a href="#writing" style="color: oklch(0.95 0.01 230); border-color: oklch(0.95 0.01 230 / .4);">Writing</a>
-      <a href="#elsewhere" style="color: oklch(0.95 0.01 230); border-color: oklch(0.95 0.01 230 / .4);">Elsewhere</a>
+      <a href="#project0" style="color: oklch(0.95 0.01 230); border-color: oklch(0.95 0.01 230 / .4);">Project 0</a>
     </nav>
   </div>
 
@@ -102,45 +100,38 @@
     <section id="about" style="display: grid; grid-template-columns: 170px 1fr; gap: 40px; padding-bottom: 46px;">
       <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: oklch(0.55 0.02 225); padding-top: 6px;">About</div>
       <div style="display: flex; flex-direction: column; gap: 18px; max-width: 62ch;">
-        <p style="margin: 0; font-size: 19px; line-height: 1.68; text-wrap: pretty;">I am an undergraduate at Yuanpei College, Peking University, currently spending Fall 2026 at UC Berkeley. I used to participate in Chinese Chemistry Olympiad. Now, I am also interested in generative models.</p>
-        <p style="margin: 0; font-size: 19px; line-height: 1.68; color: oklch(0.44 0.016 228); text-wrap: pretty;">I am also a fan of Ivan Bunin (wink).</p>
+        <p style="margin: 0; font-size: 19px; line-height: 1.68; text-wrap: pretty;">I am at UC Berkeley. I used to participate in Chinese Chemistry Olympiad. Now, I am also interested in generative models.</p>
+        <p style="margin: 0; font-size: 19px; line-height: 1.68; color: oklch(0.44 0.016 228); text-wrap: pretty;">I am also a super fan of Ivan Bunin (wink).</p>
       </div>
     </section>
 
-    <section id="research" style="display: grid; grid-template-columns: 170px 1fr; gap: 40px; padding: 46px 0; border-top: 1px solid oklch(0.72 0.018 220 / .45);">
-      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: oklch(0.55 0.02 225); padding-top: 6px;">Research</div>
+    <section id="project0" style="display: grid; grid-template-columns: 170px 1fr; gap: 40px; padding: 46px 0; border-top: 1px solid oklch(0.72 0.018 220 / .45);">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: oklch(0.55 0.02 225); padding-top: 6px;">Project 0</div>
       <div style="display: flex; flex-direction: column;">
-        <sc-for list="{{ research }}" as="item" hint-placeholder-count="3">
-          <div style="display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: baseline; padding: 17px 0; border-bottom: 1px solid oklch(0.75 0.016 220 / .35);">
-            <div style="display: flex; flex-direction: column; gap: 5px;">
-              <div style="font-size: 21px;">{{ item.title }}</div>
-              <div style="font-size: 17px; font-style: italic; color: oklch(0.47 0.016 228);">{{ item.note }}</div>
-            </div>
-            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: oklch(0.58 0.02 222);">{{ item.year }}</div>
-          </div>
-        </sc-for>
-      </div>
-    </section>
+        <sc-for list="{{ Project 0 }}" as="item" hint-placeholder-count="3">
+          <div style="display: grid; grid-template-columns: 1fr auto;">
+  <div style="font-size: 21px; padding: 17px 0; ">
+    <a href="./project-0/part1/index.html">Part-1</a>
+  </div>
+  <div style="font-size: 17px; font-style: italic; color: oklch(0.47 0.016 228); align-self: baseline; padding: 17px 0; border-bottom: 1px solid oklch(0.75 0.016 220 / .35);">
+    Selfie: The Wrong Way vs. The Right Way
+  </div>
 
-    <section id="writing" style="display: grid; grid-template-columns: 170px 1fr; gap: 40px; padding: 46px 0; border-top: 1px solid oklch(0.72 0.018 220 / .45);">
-      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: oklch(0.55 0.02 225); padding-top: 6px;">Writing</div>
-      <div style="display: flex; flex-direction: column;">
-        <sc-for list="{{ writing }}" as="item" hint-placeholder-count="3">
-          <div style="display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: baseline; padding: 17px 0; border-bottom: 1px solid oklch(0.75 0.016 220 / .35);">
-            <a href="#" style="font-size: 21px; border-bottom: none;">{{ item.title }}</a>
-            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: oklch(0.58 0.02 222);">{{ item.date }}</div>
-          </div>
-        </sc-for>
-      </div>
-    </section>
+  <div style="font-size: 21px; padding: 17px 0; ">
+    <a href="./project-0/part2/index.html">Part-2</a>
+  </div>
+  <div style="font-size: 17px; font-style: italic; color: oklch(0.47 0.016 228); align-self: baseline; padding: 17px 0; border-bottom: 1px solid oklch(0.75 0.016 220 / .35);">
+    Architectural Perspective Compression
+  </div>
 
-    <section id="elsewhere" style="display: grid; grid-template-columns: 170px 1fr; gap: 40px; padding: 46px 0 0; border-top: 1px solid oklch(0.72 0.018 220 / .45);">
-      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: oklch(0.55 0.02 225); padding-top: 6px;">Elsewhere</div>
-      <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 12px 28px; font-family: 'IBM Plex Mono', monospace; font-size: 13px;">
-        <a href="#">Email</a>
-        <a href="#">GitHub</a>
-        <a href="#">Scholar</a>
-        <a href="#">CV</a>
+  <div style="font-size: 21px; padding: 17px 0; ">
+    <a href="./project-0/part3/index.html">Part-3</a>
+  </div>
+  <div style="font-size: 17px; font-style: italic; color: oklch(0.47 0.016 228); align-self: baseline; padding: 17px 0; border-bottom: 1px solid oklch(0.75 0.016 220 / .35);">
+    The Dolly Zoom
+  </div>
+</div>
+          </sc-for>
       </div>
     </section>
 
