@@ -42,13 +42,14 @@
 
     @page { margin: 0.65in; }
     @media print {
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       body { background: #fff; }
       .page { max-width: none; padding: 0; }
       .gallery { break-before: page; }
       .gallery:first-of-type { break-before: auto; }
       figure, img { break-inside: avoid; page-break-inside: avoid; }
       nav { display: none; }
-      .hero-scene { display: none; }
+      .hero-scene { height: 100vh; break-after: page; }
     }
   </style>
 </head>
