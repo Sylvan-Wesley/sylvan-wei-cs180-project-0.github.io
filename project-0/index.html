@@ -1,59 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CS 180 Project 0 - Xinyuan Wei</title>
-  <style>
-    :root { color-scheme: light; }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: #eef2f0;
-      color: #26343d;
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.55;
-    }
-    .page { max-width: 900px; margin: 0 auto; padding: 64px 36px 84px; }
-    .eyebrow {
-      margin: 0 0 8px;
-      color: #466979;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 12px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-    h2 { font-weight: 400; line-height: 1.15; }
-    h2 { margin: 0 0 10px; font-size: 32px; }
-    .gallery { padding: 34px 0 42px; border-bottom: 1px solid #b8c8cb; }
-    .gallery:last-child { border-bottom: 0; }
-    .gallery > p { margin: 0 0 24px; font-size: 18px; }
-    .images { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; }
-    figure { margin: 0; }
-    img { display: block; width: 100%; max-height: 620px; object-fit: contain; background: #fff; }
-    #part1 img { width: 400px; max-width: 100%; }
-    figcaption { margin-top: 8px; color: #51616a; font-size: 15px; font-style: italic; }
-    nav { margin-top: 44px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
-    a { color: #285c73; }
-
-    @keyframes bank { from { transform: translate3d(-6%,0,0) } to { transform: translate3d(6%,0,0) } }
-    @keyframes sail { from { transform: translate3d(0,0,0) scale(.15) } to { transform: translate3d(-34px,-1px,0) scale(.15) } }
-    @keyframes rise { from { opacity: 0; transform: translateY(16px) } to { opacity: 1; transform: none } }
-
-    @page { margin: 0.65in; }
-    @media print {
-      body { background: #fff; }
-      .page { max-width: none; padding: 0; }
-      .gallery { break-before: page; }
-      .gallery:first-of-type { break-before: auto; }
-      figure, img { break-inside: avoid; page-break-inside: avoid; }
-      nav { display: none; }
-      .hero-scene { display: none; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
-  <div class="hero-scene" style="position: relative; height: 100vh; min-height: 620px; overflow: hidden;">
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: oklch(0.94 0.01 200); }
+  * { box-sizing: border-box; }
+  a { color: oklch(0.44 0.05 232); text-decoration: none; border-bottom: 1px solid oklch(0.44 0.05 232 / 0.3); transition: color .4s, border-color .4s; }
+  a:hover { color: oklch(0.31 0.055 232); border-color: oklch(0.31 0.055 232 / .6); }
+  ::selection { background: oklch(0.87 0.04 225); }
+  @keyframes bank { from { transform: translate3d(-6%,0,0) } to { transform: translate3d(6%,0,0) } }
+  @keyframes sail { from { transform: translate3d(0,0,0) scale(.15) } to { transform: translate3d(-34px,-1px,0) scale(.15) } }
+  @keyframes rise { from { opacity: 0; transform: translateY(16px) } to { opacity: 1; transform: none } }
+</style>
+</helmet>
+
+<div style="background: oklch(0.94 0.01 200); color: oklch(0.3 0.014 232); font-family: 'EB Garamond', Georgia, serif;">
+
+  <!-- ── the scene: where the gardens part ── -->
+  <div style="position: relative; height: 100vh; min-height: 620px; overflow: hidden;">
 
     <!-- sky: grey cloud ridges, cooling toward orange at the far light -->
     <div style="position: absolute; inset: 0 0 46% 0; background: linear-gradient(to bottom, oklch(0.845 0.018 250) 0%, oklch(0.875 0.016 248) 30%, oklch(0.905 0.02 240) 62%, oklch(0.935 0.03 82) 88%, oklch(0.945 0.038 68) 100%);"></div>
@@ -111,63 +83,94 @@
     <div style="position: absolute; left: 0; right: 52%; top: 15vh; display: flex; justify-content: flex-end; animation: rise 1.8s cubic-bezier(.2,.7,.2,1) both;">
       <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding: 0 24px 0 48px; max-width: 520px;">
         <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: oklch(0.44 0.02 232 / .8);">Homepage</div>
-        <h1 style="margin: 0; font-family: 'EB Garamond', Georgia, serif; font-size: clamp(46px, 7vw, 92px); font-weight: 400; line-height: 1; letter-spacing: -.02em; color: oklch(0.26 0.02 235);">Xinyuan Wei</h1>
-        <p style="margin: 0; max-width: 34ch; font-family: 'EB Garamond', Georgia, serif; font-size: 21px; font-style: italic; line-height: 1.5; color: oklch(0.36 0.02 232); text-wrap: pretty;">On generative models and science.</p>
+        <h1 style="margin: 0; font-size: clamp(46px, 7vw, 92px); font-weight: 400; line-height: 1; letter-spacing: -.02em; color: oklch(0.26 0.02 235);">Xinyuan Wei</h1>
+        <p style="margin: 0; max-width: 34ch; font-size: 21px; font-style: italic; line-height: 1.5; color: oklch(0.36 0.02 232); text-wrap: pretty;">On generative models and science.</p>
       </div>
     </div>
 
-    <nav style="position: absolute; left: 0; right: 0; bottom: 34px; margin: 0; display: flex; justify-content: center; gap: 30px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .1em;">
-      <a href="project-0/index.html#about" style="color: oklch(0.95 0.01 230); border-color: oklch(0.95 0.01 230 / .4);">About</a>
-      <a href="project-0/index.html#project0" style="color: oklch(0.95 0.01 230); border-color: oklch(0.95 0.01 230 / .4);">Project 0</a>
+    <nav style="position: absolute; left: 0; right: 0; bottom: 34px; display: flex; justify-content: center; gap: 30px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .1em;">
+      <a href="#about" style="color: oklch(0.95 0.01 230); border-color: oklch(0.95 0.01 230 / .4);">About</a>
+      <a href="#project0" style="color: oklch(0.95 0.01 230); border-color: oklch(0.95 0.01 230 / .4);">Project 0</a>
     </nav>
   </div>
 
-  <main class="page">
-    <section class="gallery" id="part1">
-      <p class="eyebrow">Part 1</p>
-      <h2>Selfie: The Wrong Way vs. The Right Way</h2>
-      <p>Two selfies of myself.</p>
-      <div class="images">
-        <figure>
-          <img src="project-0/part1/selfie-near.jpg" alt="Selfie taken from close up" width="400px">
-          <figcaption>A selfie taken from close up.</figcaption>
-        </figure>
-        <figure>
-          <img src="project-0/part1/selfie-far.jpg" alt="Selfie taken from far away" width="400px">
-          <figcaption>A selfie taken from far away.</figcaption>
-        </figure>
+  <!-- ── content ── -->
+  <div style="background: linear-gradient(to bottom, oklch(0.645 0.058 197) 0%, oklch(0.72 0.05 198) 1.6%, oklch(0.82 0.032 199) 4%, oklch(0.9 0.018 200) 7%, oklch(0.94 0.01 200) 11%);">
+  <div style="max-width: 1000px; margin: 0 auto; padding: 12vh 48px 14vh;">
+    <section id="about" style="display: grid; grid-template-columns: 170px 1fr; gap: 40px; padding-bottom: 46px;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: oklch(0.55 0.02 225); padding-top: 6px;">About</div>
+      <div style="display: flex; flex-direction: column; gap: 18px; max-width: 62ch;">
+        <p style="margin: 0; font-size: 19px; line-height: 1.68; text-wrap: pretty;">I am at UC Berkeley. I used to participate in Chinese Chemistry Olympiad. Now, I am also interested in generative models.</p>
+        <p style="margin: 0; font-size: 19px; line-height: 1.68; color: oklch(0.44 0.016 228); text-wrap: pretty;">A devoted Ivan Bunin fan as well (wink).</p>
       </div>
     </section>
 
-    <section class="gallery" id="part2">
-      <p class="eyebrow">Part 2</p>
-      <h2>Architectural Perspective Compression</h2>
-      <p>Two photos of Undergraduate Building.</p>
-      <div class="images">
-        <figure>
-          <img src="project-0/part2/building-1.jpg" alt="Undergraduate Building taken from far away">
-          <figcaption>A picture taken from far away.</figcaption>
-        </figure>
-        <figure>
-          <img src="project-0/part2/building-2.jpg" alt="Undergraduate Building taken from close up">
-          <figcaption>A picture taken from close up.</figcaption>
-        </figure>
+    <section id="project0" style="display: grid; grid-template-columns: 170px 1fr; gap: 40px; padding: 46px 0; border-top: 1px solid oklch(0.72 0.018 220 / .45);">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: oklch(0.55 0.02 225); padding-top: 6px;">Project 0</div>
+      <div style="display: flex; flex-direction: column;">
+        <div style="display: grid; grid-template-columns: 1fr auto;">
+          <div style="font-size: 21px; padding: 17px 0;">
+            <a href="../index.html">Full gallery</a>
+          </div>
+          <div style="font-size: 17px; font-style: italic; color: oklch(0.47 0.016 228); align-self: baseline; padding: 17px 0; border-bottom: 1px solid oklch(0.75 0.016 220 / .35);">
+            All parts, formatted for printing
+          </div>
+        </div>
+        <sc-for list="{{ Project 0 }}" as="item" hint-placeholder-count="3">
+          <div style="display: grid; grid-template-columns: 1fr auto;">
+  <div style="font-size: 21px; padding: 17px 0; ">
+    <a href="./part1/index.html">Part-1</a>
+  </div>
+  <div style="font-size: 17px; font-style: italic; color: oklch(0.47 0.016 228); align-self: baseline; padding: 17px 0; border-bottom: 1px solid oklch(0.75 0.016 220 / .35);">
+    Selfie: The Wrong Way vs. The Right Way
+  </div>
+
+  <div style="font-size: 21px; padding: 17px 0; ">
+    <a href="./part2/index.html">Part-2</a>
+  </div>
+  <div style="font-size: 17px; font-style: italic; color: oklch(0.47 0.016 228); align-self: baseline; padding: 17px 0; border-bottom: 1px solid oklch(0.75 0.016 220 / .35);">
+    Architectural Perspective Compression
+  </div>
+
+  <div style="font-size: 21px; padding: 17px 0; ">
+    <a href="./part3/index.html">Part-3</a>
+  </div>
+  <div style="font-size: 17px; font-style: italic; color: oklch(0.47 0.016 228); align-self: baseline; padding: 17px 0; border-bottom: 1px solid oklch(0.75 0.016 220 / .35);">
+    The Dolly Zoom
+  </div>
+</div>
+          </sc-for>
       </div>
     </section>
 
-    <section class="gallery" id="part3">
-      <p class="eyebrow">Part 3</p>
-      <h2>The Dolly Zoom</h2>
-      <p>Dolly zoom at Berkeley.</p>
-      <div class="images">
-        <figure>
-          <img src="project-0/part3/dolly-zoom.gif" alt="Dolly zoom at Berkeley">
-          <figcaption>Dolly zoom at Berkeley.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <nav><a href="project-0/index.html">Back to homepage</a></nav>
-  </main>
+    <footer style="padding-top: 12vh; display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .12em; color: oklch(0.6 0.02 222);">
+      <div>© 2026</div>
+      <sc-if value="{{ showEpigraph }}" hint-placeholder-val="{{ true }}">
+        <div style="font-family: 'EB Garamond', Georgia, serif; font-style: italic; font-size: 17px; letter-spacing: 0; max-width: 36ch; text-align: right; line-height: 1.5; color: oklch(0.5 0.018 228);">“Almost on the line of the horizon we caught sight of the sails of the Nadezhda.”</div>
+      </sc-if>
+    </footer>
+  </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showEpigraph&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showEpigraph: this.props.showEpigraph ?? true,
+      work: [
+        { title: "Project one", note: "a short descriptive phrase", year: "2026" },
+        { title: "Project two", note: "what it was, in a few words", year: "2025" },
+        { title: "Project three", note: "another line of context", year: "2024" }
+      ],
+      writing: [
+        { title: "An essay title goes here", date: "May 2026" },
+        { title: "A second piece, shorter", date: "Nov 2025" },
+        { title: "Notes on something", date: "Feb 2025" }
+      ]
+    };
+  }
+}
+</script>
 </body>
 </html>
